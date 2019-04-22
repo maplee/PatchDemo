@@ -83,7 +83,6 @@ PatchApi.stopDownload(url);
 ```
 ### 合并指定包和patch
 ```
-//url 下载链接
 // oldFilePath 旧的apk路径
 // newFilePath 合成的apk路径
 // patchPath patch的路径
