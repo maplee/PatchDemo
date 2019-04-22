@@ -1,6 +1,6 @@
-# DownloaderModule
+# PatchModule
 
-简易下载模块
+androidapk增量包下载合并模块
 
 添加仓库
 
