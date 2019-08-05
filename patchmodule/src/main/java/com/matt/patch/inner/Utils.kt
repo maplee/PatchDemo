@@ -6,7 +6,6 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Environment
 import android.util.Log
-import com.matt.patch.BuildConfig
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -30,7 +29,7 @@ class Utils {
             return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).absolutePath
         }
 
-        public fun getDownloadPath(): File {
+        fun getDownloadPath(): File {
             val parent = File(getRootFile() + DOWNLOAD_PATH)
             if (!parent.exists()) {
                 parent.mkdirs()
@@ -100,7 +99,7 @@ class Utils {
         fun getInstalledApkPackageInfo(context:Context,packageName:String):PackageInfo?{
             var list:MutableList<PackageInfo> = context.packageManager.getInstalledPackages(PackageManager.MATCH_UNINSTALLED_PACKAGES)
             list.forEach {
-                if(BuildConfig.DEBUG){
+                if(CompileConfig.DEBUG){
                     Log.i(TAG,"getInstalledApkVersion--packageName:"+it.applicationInfo.packageName
                             +",versionName:"+it.versionCode
                             +",sourceDir:"+it.applicationInfo.sourceDir)
@@ -115,7 +114,7 @@ class Utils {
         fun getInstalledApk(context:Context,packageName:String):String?{
             var list:MutableList<PackageInfo> = context.packageManager.getInstalledPackages(PackageManager.MATCH_UNINSTALLED_PACKAGES)
             list.forEach {
-                if(BuildConfig.DEBUG){
+                if(CompileConfig.DEBUG){
                     Log.i(TAG,"getInstalledApk--packageName:"+it.applicationInfo.packageName
                             +",versionName:"+it.versionName
                             +",sourceDir:"+it.applicationInfo.sourceDir)
@@ -136,7 +135,7 @@ class Utils {
          * 复制文件
          */
         public fun copyFile(sourceDir:String,distDir:String):Boolean{
-            if(BuildConfig.DEBUG){
+            if(CompileConfig.DEBUG){
                 Log.i("Utils", "copyFile, sourceDir:${sourceDir},distDir:${distDir}")
             }
             var sourceFile = File(sourceDir)

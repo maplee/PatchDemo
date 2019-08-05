@@ -19,7 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
         maven {url 'https://raw.github.com/maplee/mvn-repo/master'}
+//        maven { url "https://jitpack.io" }
 
     }
 }

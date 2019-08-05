@@ -4,7 +4,22 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-android {
+ext {
+    // app 相关版本控制
+    versions = [
+            sdkMinVersion    : 15,
+            sdkTargetVersion : 26,
+
+            sdkCompileVersion: 26,
+            toolsBuildVersion: "26.0.2",
+
+            appVersionCode   : 520,
+            appVersionName   : "1.0.0",
+            work:"2.1.0"
+    ]
+}
+
+    android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.matt.patchdemo"
@@ -36,8 +51,12 @@ dependencies {
 
     if("true".equals(UPLOAD)){
         implementation 'com.matt.module:patch:1.0.0'
-        implementation 'com.matt.module:downloader:1.0.0'
+//        implementation 'com.matt.module:downloader:1.0.0'
+        implementation 'com.github.maplee:DownloaderDemo:1.0.2'
     }else{
         implementation project(':patchmodule')
     }
+
+    implementation 'androidx.core:core-ktx:0.1'
+    implementation "androidx.work:work-runtime:$versions.work"
 }

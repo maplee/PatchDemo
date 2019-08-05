@@ -53,6 +53,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:26.+'
-    implementation 'com.matt.module:downloader:1.0.0'
+//    implementation 'com.matt.module:downloader:1.0.0'
+    implementation 'com.github.maplee:DownloaderDemo:1.0.2'
+//    implementation 'com.github.jiyouliang2:SmartUpdateDemo:1.0.1'
 
 }
